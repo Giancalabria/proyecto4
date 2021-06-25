@@ -1,0 +1,26 @@
+@import '../../utils/styles/theme';
+
+.button {
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 240px;
+}
+
+.primary {
+    background-color: $color-primary;
+    color: #fff;
+}
+
+.secondary {
+    color: $color-primary;
+    background: rgba(255, 23, 68, 0.03);
+    font-weight: 400;
+}
+
+.tertiary {
+    color: $color-primary;
+    font-weight: 400;
+}
