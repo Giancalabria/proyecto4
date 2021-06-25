@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { Input } from "../components/input/input"
+import { Input } from "../../components/input/input"
 import styles from "./login.module.scss"
-import auriculares from "../assets/icons/auriculares.svg"
-import { Button } from "../components/button/button"
+import auriculares from "../../assets/icons/auriculares.svg"
+import { Button } from "../../components/button/button"
 export const Login = () => {
     const [username, setUsernname] = useState()
     const [password, setPassword] = useState()

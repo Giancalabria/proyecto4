@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Login } from "../pages/login"
-
+import { Login } from "../pages/login/login"
+import { Main } from '../pages/main/main'
 
 export const Routes = () => {
 	return (
@@ -8,6 +8,9 @@ export const Routes = () => {
 			<Switch>
 				<Route exact path='/'>
 					<Login />
+				</Route>
+                <Route exact path='/main'>
+					<Main />
 				</Route>
 				<Route>
 					<h1>Esta pagina no existe! Volve al home</h1>
