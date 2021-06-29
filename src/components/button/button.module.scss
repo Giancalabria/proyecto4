@@ -15,9 +15,11 @@
 }
 
 .secondary {
-    color: $color-primary;
-    background: rgba(255, 23, 68, 0.03);
+    color: $color-grey-dark;
+    background: $color-grey;
     font-weight: 400;
+    border-radius: 20.5px;
+    width: 200px
 }
 
 .tertiary {
