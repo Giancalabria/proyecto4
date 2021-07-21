@@ -1,11 +1,11 @@
-
 .product {
 margin: 20px;
 background-color: white;
 }
 
 .photo {
-    max-width: 350px;
+    width: 350px;
+    height: 250px;
 }
 
 .description{
@@ -22,3 +22,8 @@ background-color: white;
 .name {
     color: #616161
 }
+
+.invisible {
+    display: none;
+}
+

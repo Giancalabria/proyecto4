@@ -8,16 +8,16 @@ export const Results = () => {
 	useEffect(() => {
 		getProducts().then((products) => setProducts(products))
 	}, [])
-	return (
-		<section className={styles.results}>
-			{products.map((object) => (
-				<Product
-					key={object._id}
-					url={object.img.hdUrl}
-					name={object.name}
-					category={object.category}
-				/>
-			))}
-		</section>
-	)
+
+	const mappedProducts = products.map((object, index) => (
+		<Product
+			key={index}
+			url={object.img.hdUrl}
+			name={object.name}
+			category={object.category}
+			id={index}
+		/>
+	))
+
+	return <section className={styles.results}>{mappedProducts}</section>
 }

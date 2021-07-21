@@ -8,6 +8,7 @@ import { Context } from '../../context/context'
 
 export const Header = ({ background }) => {
 	const { user, setUser } = useContext(Context)
+
 	useEffect(() => {
 		getUser().then((user) => setUser(user))
 	}, [])
