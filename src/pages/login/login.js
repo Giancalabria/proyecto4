@@ -5,7 +5,7 @@ import auriculares from '../../assets/icons/auriculares.svg'
 import { Button } from '../../components/button/button'
 import { Link } from 'react-router-dom'
 export const Login = () => {
-	const [username, setUsernname] = useState()
+	const [username, setUsername] = useState()
 	const [password, setPassword] = useState()
 
 	const verify = () => {
@@ -27,7 +27,7 @@ export const Login = () => {
 					label='Usuario'
 					name='user'
 					value={username}
-					onChange={({ target }) => setUsernname(target.value)}
+					onChange={({ target }) => setUsername(target.value)}
 				/>
 
 				<Input

@@ -2,6 +2,7 @@ import styles from './main.module.scss'
 import { Page } from '../../components/page/page'
 import { Button } from '../../components/button/button'
 import background from '../../assets/png/header-x1.png'
+import { Results } from '../../components/results/results'
 export const Main = () => {
 	return (
 		<Page id='main' className={styles.main} background={background}>
@@ -24,6 +25,7 @@ export const Main = () => {
 					className={styles.button}
 				/>
 			</div>
+			<Results />
 		</Page>
 	)
 }
