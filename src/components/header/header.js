@@ -26,6 +26,7 @@ export const Header = ({ background }) => {
 				</div>
 			</div>
 			<img src={background} className={styles.background} />
+			<h1 className={styles.title}>Electronics</h1>
 		</header>
 	)
 }

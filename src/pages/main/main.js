@@ -26,9 +26,9 @@ export const Main = () => {
 	}
 
 	const sortProductsBy = (array, sort, desc) => {
-		if (desc === true) {
+		if (desc === true && sort === 'name') {
 			let newProducts = array.sort(function (a, b) {
-				if (a[sort] < b[sort]) {
+				if (a[sort].toUpperCase() < b[sort].toUpperCase()) {
 					return -1
 				} else if (a[sort] > b[sort]) {
 					return 1
@@ -42,6 +42,17 @@ export const Main = () => {
 				if (a[sort] > b[sort]) {
 					return -1
 				} else if (a[sort] < b[sort]) {
+					return 1
+				} else {
+					return 0
+				}
+			})
+			setProducts(newProducts)
+		} else if (desc === true && sort !== 'name') {
+			let newProducts = array.sort(function (a, b) {
+				if (a[sort] < b[sort]) {
+					return -1
+				} else if (a[sort] > b[sort]) {
 					return 1
 				} else {
 					return 0
@@ -66,7 +77,7 @@ export const Main = () => {
 					<p className={styles.text}>Sort by:</p>
 					<Button
 						content='Name'
-						variant='secondary'
+						variant='primary'
 						className={`${styles.button} ${
 							currentFilter === 0 ? styles.active : styles.inactive
 						}`}
@@ -76,7 +87,7 @@ export const Main = () => {
 					/>
 					<Button
 						content='Lowest price'
-						variant='secondary'
+						variant='primary'
 						className={`${styles.button} ${
 							currentFilter === 1 ? styles.active : styles.inactive
 						}`}
@@ -86,7 +97,7 @@ export const Main = () => {
 					/>
 					<Button
 						content='Highest price'
-						variant='secondary'
+						variant='primary'
 						className={`${styles.button} ${
 							currentFilter === 2 ? styles.active : styles.inactive
 						}`}
@@ -98,7 +109,7 @@ export const Main = () => {
 				<div className={styles.arrows}>
 					{products.length > 16 ? (
 						<Button
-							variant='terciary'
+							variant='secondary'
 							content={currentPage === 0 ? '>' : '<'}
 							onClick={
 								currentPage === 0

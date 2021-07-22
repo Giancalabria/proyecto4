@@ -9,19 +9,24 @@
 }
 
 .primary {
-    background-color: $color-primary;
-    color: #fff;
-}
-
-.secondary {
     font-weight: 400;
     border-radius: 20px;
     width: 200px
 }
 
-.terciary {
+.secondary {
     border: 1px solid #d9d9d9;
     border-radius: 100%;
     width: 50px;
     color: #d9d9d9;
+}
+
+.terciary {
+   background-color: white;
+   width: 200px;
+   border-radius: 20px;
+}
+
+.terciary:hover {
+    background-color: #d9d9d9;
 }

@@ -24,6 +24,7 @@ export const Results = () => {
 					name={object.name}
 					category={object.category}
 					id={index}
+					price={object.cost}
 				/>
 			))
 		}
