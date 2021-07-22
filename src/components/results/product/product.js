@@ -4,6 +4,8 @@ import { useContext, useState } from 'react'
 import { Context } from '../../../context/context'
 import coin from '../../../assets/icons/coin.svg'
 import { Button } from '../../button/button'
+import bagBlue from '../../../assets/icons/buy-blue.svg'
+import bagWhite from '../../../assets/icons/buy-white.svg'
 export const Product = ({ url, name, category, id, price }) => {
 	const { currentPage, user } = useContext(Context)
 	const [isHover, setIsHover] = useState()
@@ -13,6 +15,10 @@ export const Product = ({ url, name, category, id, price }) => {
 
 	const checkhover = (value) => {
 		setIsHover(value)
+	}
+
+	const redeemProduct = () => {
+		alert('Redeemed succesfully')
 	}
 	return (
 		<div
@@ -34,13 +40,26 @@ export const Product = ({ url, name, category, id, price }) => {
 								content='Redeem now!'
 								variant='terciary'
 								className={`${styles.button} `}
-								onClick={() => alert('Redeemed succesfully!')}
+								onClick={() => redeemProduct()}
 							/>
 						</div>
 					</div>
 				)}
 				{user.points >= price ? (
-					<div>hola</div>
+					<div>
+						<img
+							src={bagBlue}
+							className={`${styles.bag} ${
+								!isHover ? styles.visibleBag : styles.invisibleBag
+							}`}
+						/>
+						<img
+							src={bagWhite}
+							className={`${styles.bag} ${
+								isHover ? styles.visibleBag : styles.invisibleBag
+							}`}
+						/>
+					</div>
 				) : (
 					<div className={styles.neededPoints}>
 						<p className={styles.text}>You need {price - user.points}</p>

@@ -6,6 +6,14 @@
 margin: 20px;
 background-color: white;
 height: 400px;
+display: flex;
+flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .photo {
@@ -40,13 +48,12 @@ height: 400px;
     justify-content: center;
     border-radius: 40px;
     align-items: center;
-    margin-left: 150px;
     transform: translate(0%, 40%);
     color: white;
+    margin-right: 10px;
 }
 .text{
     padding-right: 5px;
-    
 }
 
 .hoverProduct{
@@ -58,6 +65,9 @@ height: 400px;
     -webkit-box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
     -moz-box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
     box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
 }
 
 .hoverFlex{
@@ -83,4 +93,20 @@ height: 400px;
 
 .button {
     color: $color-grey-dark;
+}
+.bag{
+    display: flex;
+    margin: 10px 10px 0px 0px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.invisibleBag {
+    display: none;
+}
+
+.visibleBag {
+    position: relative;
+    z-index: 2;
 }
