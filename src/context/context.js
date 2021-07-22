@@ -7,8 +7,8 @@ export default function ContextProvider({ children }) {
 	const [user, setUser] = useState({})
 	const [products, setProducts] = useState([])
 	const [currentPage, setCurrentPage] = useState(0)
-	// let totalProduct = product.length
 
+	const [currentFilter, setCurrentFilter] = useState()
 	return (
 		<Context.Provider
 			value={{
@@ -18,6 +18,8 @@ export default function ContextProvider({ children }) {
 				setProducts,
 				currentPage,
 				setCurrentPage,
+				currentFilter,
+				setCurrentFilter,
 			}}
 		>
 			{children}
