@@ -9,7 +9,7 @@ export const Routes = () => {
 				{/* <Route exact path='/'>
 					<Login />
 				</Route> */}
-				<Route exact path='/'>
+				<Route exact path='/Proyecto-4'>
 					<Main />
 				</Route>
 				<Route>
