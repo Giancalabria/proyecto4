@@ -6,13 +6,12 @@ import { useContext, useEffect, useState } from 'react'
 import { getUser } from '../../services/users'
 import { Context } from '../../context/context'
 import { addPoints } from '../../services/points'
+import { Login } from './login/login'
+import { Admin } from './admin/admin'
 import { Button } from '../button/button'
-import { Input } from '../input/input'
 export const Header = ({ background }) => {
-	const { user, setUser } = useContext(Context)
+	const { user, setUser, redeemedProduct } = useContext(Context)
 	const [adminMode, setAdminMode] = useState(false)
-	const [username, setUsername] = useState('')
-	const [password, setPassword] = useState('')
 	const [points, setPoints] = useState()
 	const [loginAdmin, setLoginAdmin] = useState(false)
 	const [AddPoints, setAddPoints] = useState(0)
@@ -20,7 +19,7 @@ export const Header = ({ background }) => {
 		getUser()
 			.then((user) => setUser(user))
 			.then(() => setPoints(user.points))
-	}, [AddPoints, user.name, user.points])
+	}, [AddPoints, user.name, user.points, redeemedProduct])
 
 	useEffect(() => {
 		if (AddPoints === 1000) {
@@ -45,15 +44,6 @@ export const Header = ({ background }) => {
 		setLoginAdmin(true)
 	}
 
-	const verify = () => {
-		if (username === 'admin' && password === 'admin') {
-			setAdminMode(true)
-			setLoginAdmin(false)
-		} else {
-			alert('Usuario/Contraseña incorrecta/s')
-			setLoginAdmin(false)
-		}
-	}
 	return (
 		<header className={styles.main}>
 			<div className={styles.header}>
@@ -75,49 +65,10 @@ export const Header = ({ background }) => {
 			<img src={background} className={styles.background} />
 			<h1 className={styles.title}>Electronics</h1>
 			{loginAdmin && (
-				<div className={styles.adminDiv}>
-					<Input
-						label='Usuario'
-						name='user'
-						value={username}
-						onChange={({ target }) => setUsername(target.value)}
-					/>
-
-					<Input
-						label='Contraseña'
-						name='password'
-						value={password}
-						onChange={({ target }) => setPassword(target.value)}
-						type='password'
-					/>
-
-					<Button
-						className={styles.login}
-						onClick={() => verify()}
-						content='Iniciar sesion'
-					/>
-				</div>
+				<Login setAdminMode={setAdminMode} setLoginAdmin={setLoginAdmin} />
 			)}
 			{adminMode && (
-				<div className={styles.adminDiv}>
-					<div className={styles.adminFlex}>
-						<Button
-							className={styles.enter}
-							onClick={() => setAddPoints(1000) + setAdminMode(false)}
-							content='Agregar 1000 puntos'
-						/>
-						<Button
-							className={styles.enter}
-							onClick={() => setAddPoints(5000) + setAdminMode(false)}
-							content='Agregar 5000 puntos'
-						/>
-						<Button
-							className={styles.enter}
-							onClick={() => setAddPoints(7500) + setAdminMode(false)}
-							content='Agregar 7500 puntos'
-						/>
-					</div>
-				</div>
+				<Admin setAdminMode={setAdminMode} setAddPoints={setAddPoints} />
 			)}
 		</header>
 	)

@@ -1,8 +1,7 @@
+@import '../../utils/styles/flex';
+@import '../../utils/styles/theme';
+
 .results {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, center, wrap)
 }
 

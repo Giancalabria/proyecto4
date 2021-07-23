@@ -3,23 +3,20 @@ import PropTypes from 'prop-types'
 import { useContext, useState } from 'react'
 import { Context } from '../../../context/context'
 import coin from '../../../assets/icons/coin.svg'
-import { Button } from '../../button/button'
+import { Hover } from './hover/hover'
 import bagBlue from '../../../assets/icons/buy-blue.svg'
 import bagWhite from '../../../assets/icons/buy-white.svg'
-export const Product = ({ url, name, category, id, price }) => {
+export const Product = ({ url, name, category, index, price, id }) => {
 	const { currentPage, user } = useContext(Context)
 	const [isHover, setIsHover] = useState()
 	const checkPage = () => {
-		return currentPage === 0 ? id < 16 : id >= 16
+		return currentPage === 0 ? index < 16 : index >= 16
 	}
 
 	const checkhover = (value) => {
 		setIsHover(value)
 	}
 
-	const redeemProduct = () => {
-		alert('Redeemed succesfully')
-	}
 	return (
 		<div
 			className={`${styles.product} ${
@@ -29,22 +26,7 @@ export const Product = ({ url, name, category, id, price }) => {
 			onMouseLeave={() => checkhover(false)}
 		>
 			<div className={styles.container}>
-				{isHover && (
-					<div className={styles.hoverProduct}>
-						<div className={styles.hoverFlex}>
-							<div className={styles.priceContainer}>
-								<p className={styles.price}>{price}</p>
-								<img src={coin} />
-							</div>
-							<Button
-								content='Redeem now!'
-								variant='terciary'
-								className={`${styles.button} `}
-								onClick={() => redeemProduct()}
-							/>
-						</div>
-					</div>
-				)}
+				{isHover && <Hover price={price} coin={coin} id={id} />}
 				{user.points >= price ? (
 					<div>
 						<img
@@ -80,6 +62,7 @@ Product.propTypes = {
 	url: PropTypes.string,
 	name: PropTypes.string,
 	category: PropTypes.string,
-	id: PropTypes.number,
+	index: PropTypes.number,
 	price: PropTypes.number,
+	id: PropTypes.string,
 }

@@ -9,11 +9,19 @@
     .header {
         @include flex(row, flex-start, space-between);
         width: 100%;
-
+        
         .logo {
             margin: $space-m $space-l;
         }
-
+        
+        .button {
+            margin: $space-m 0px;
+            background-color: #ededed4f;
+        }
+        
+        .button:hover{
+            background-color: $color-grey;
+        }
         .info {
             @include flex(row);
             margin: $space-m;
@@ -35,42 +43,13 @@
         width: 100%;
         height: 350px;
     }
+    .title {
+        color:white;
+        font-size: 50px;
+        transform: translate(-200%, 150%);
+        position: absolute;
+    }
 }
 
-.title {
-    color:white;
-    font-size: 50px;
-    transform: translate(-200%, 150%);
-    position: absolute;
-}
 
-.button {
-    margin: $space-m 0px;
-    background-color: #ededed4f;
-}
 
-.button:hover{
-    background-color: $color-grey;
-}
-
-.adminDiv {
-    position: absolute;
-    z-index: 1;
-    background-color: white;
-    padding: 10px;
-    
-}
-
-.adminFlex{
-    display: flex;
-    flex-direction: column;
-}
-
-.login {
-    background-color: lightblue;
-}
-
-.enter{
-    background-color: lightblue;
-    margin: 5px;
-}

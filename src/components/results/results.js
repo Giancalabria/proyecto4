@@ -23,8 +23,9 @@ export const Results = () => {
 					url={object.img.hdUrl}
 					name={object.name}
 					category={object.category}
-					id={index}
+					index={index}
 					price={object.cost}
+					id={object._id}
 				/>
 			))
 		}
