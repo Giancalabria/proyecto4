@@ -1,0 +1,57 @@
+.redeemMessage {
+    position: fixed;
+    background-color: rgba(207, 182, 182, 0.185);
+    z-index: 3;
+}
+
+.redeemFlex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 300px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container.succesfully{
+    background: rgb(143,218,119);
+    background: linear-gradient(90deg, rgba(143,218,119,1) 35%, rgba(112,217,148,1) 49%);
+}
+
+.container.error{
+    background: rgb(249,96,96);
+    background: linear-gradient(90deg, rgba(249,96,96,1) 26%, rgba(232,153,78,1) 100%);
+}
+
+.happy {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: white;
+    letter-spacing: 5px;
+}
+
+.text{
+    margin-bottom: 20px;
+}
+
+.successButton{
+    color: rgb(143,218,119);
+ 
+}
+
+.errorButton {
+    letter-spacing: 3px;
+    color: rgb(249,96,96);
+}
