@@ -18,6 +18,13 @@ export const Login = ({ setAdminMode, setLoginAdmin }) => {
 	}
 	return (
 		<div className={styles.adminDiv}>
+			<Button
+				content='X'
+				name='close'
+				variant='secondary'
+				className={styles.close}
+				onClick={() => setLoginAdmin(false)}
+			/>
 			<div className={styles.adminFlex}>
 				<Input
 					label='Usuario'

@@ -3,16 +3,23 @@
 
 
 .adminDiv {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     background-color: white;
-    padding: 10px;
+    width: 500px;   
+    height: 250px;
+    padding-top: 20px;
+    .close {
+        position: absolute;
+        transform: translate(0%, -50%)
+    }
+
     .adminFlex{
         @include flex(column);
 
         .enter {
             background-color: lightblue;
-            margin: 5px;
+            margin: 10px;
         }
     }
     

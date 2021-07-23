@@ -15,12 +15,13 @@
         }
         
         .button {
-            margin: $space-m 0px;
-            background-color: #ededed4f;
+            margin: $space-m;
+            // margin-left: 150px;
+            background-color: $color-grey;
         }
         
         .button:hover{
-            background-color: $color-grey;
+            background-color: #ededed4f;
         }
         .info {
             @include flex(row);

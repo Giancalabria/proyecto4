@@ -3,7 +3,6 @@ import { Context } from '../../context/context'
 import { Product } from './product/product'
 import { getProducts } from '../../services/products'
 import styles from './results.module.scss'
-
 export const Results = () => {
 	const { products, setProducts, currentFilter, setCurrentFilter } =
 		useContext(Context)

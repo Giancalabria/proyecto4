@@ -5,14 +5,16 @@ import { useContext, useEffect, useState } from 'react'
 import { redeemProduct } from '../../../../services/redeem'
 import { Context } from '../../../../context/context'
 export const Hover = ({ price, coin, id }) => {
-	const { setRedeemedProduct } = useContext(Context)
+	const { setRedeemedProduct, setShowRedeemMessage, setIsError, user } =
+		useContext(Context)
 	const [redeemId, setRedeemId] = useState('')
 
 	useEffect(() => {
-		if (redeemId === id) {
-			redeemProduct(redeemId)
+		if (redeemId === id && user.points >= price) {
+			redeemProduct(redeemId, setIsError)
 				.then(() => setRedeemedProduct(false))
 				.then(() => setRedeemId(0))
+				.then(() => setShowRedeemMessage(true))
 		}
 	}, [redeemId])
 

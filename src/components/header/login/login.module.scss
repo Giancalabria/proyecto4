@@ -3,15 +3,26 @@
 
 
 .adminDiv {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     background-color: white;
-    padding: 10px;
-    .adminFlex{
-        @include flex(column);
+    width: 500px;   
+    height: 250px;
+    padding-top: 20px;
 
+    .close {
+        position: absolute;
+        transform: translate(0, -50%)
+    }
+
+    .adminFlex{
+        @include flex(column, center, center);
         .login{
-            background-color: lightblue;
+            background-color: #0ad2fa;
+            color: white;
+        }
+        .login:hover{
+            background-color: #0ad2fa9b;
         }
     }
     

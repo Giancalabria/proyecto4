@@ -4,6 +4,13 @@ import PropTypes from 'prop-types'
 export const Admin = ({ setAddPoints, setAdminMode }) => {
 	return (
 		<div className={styles.adminDiv}>
+			<Button
+				content='X'
+				name='close'
+				variant='secondary'
+				className={styles.close}
+				onClick={() => setAdminMode(false)}
+			/>
 			<div className={styles.adminFlex}>
 				<Button
 					className={styles.enter}

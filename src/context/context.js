@@ -9,6 +9,8 @@ export default function ContextProvider({ children }) {
 	const [currentPage, setCurrentPage] = useState(0)
 	const [currentFilter, setCurrentFilter] = useState()
 	const [redeemedProduct, setRedeemedProduct] = useState(false)
+	const [isError, setIsError] = useState(false)
+	const [showRedeemMessage, setShowRedeemMessage] = useState(false)
 	return (
 		<Context.Provider
 			value={{
@@ -22,6 +24,10 @@ export default function ContextProvider({ children }) {
 				setCurrentFilter,
 				redeemedProduct,
 				setRedeemedProduct,
+				isError,
+				setIsError,
+				showRedeemMessage,
+				setShowRedeemMessage,
 			}}
 		>
 			{children}

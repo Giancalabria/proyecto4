@@ -41,8 +41,18 @@ export const Header = ({ background }) => {
 	}, [AddPoints])
 
 	const tryLoginAdmin = () => {
-		setLoginAdmin(true)
+		if (loginAdmin) {
+			setLoginAdmin(false)
+		} else if (loginAdmin === false) {
+			setLoginAdmin(true)
+		}
 	}
+
+	useEffect(() => {
+		if (adminMode === true) {
+			setLoginAdmin(false)
+		}
+	}, [adminMode, loginAdmin])
 
 	return (
 		<header className={styles.main}>
@@ -53,6 +63,12 @@ export const Header = ({ background }) => {
 					variant='primary'
 					className={`${styles.button}`}
 					onClick={() => tryLoginAdmin()}
+				/>
+				<Button
+					content='Redeem history'
+					variant='primary'
+					className={`${styles.button}`}
+					onClick={() => alert('Hola')}
 				/>
 				<div className={styles.info}>
 					<p className={styles.user}>{user.name}</p>
