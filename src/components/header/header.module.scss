@@ -43,3 +43,34 @@
     transform: translate(-200%, 150%);
     position: absolute;
 }
+
+.button {
+    margin: $space-m 0px;
+    background-color: #ededed4f;
+}
+
+.button:hover{
+    background-color: $color-grey;
+}
+
+.adminDiv {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    
+}
+
+.adminFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.login {
+    background-color: lightblue;
+}
+
+.enter{
+    background-color: lightblue;
+    margin: 5px;
+}

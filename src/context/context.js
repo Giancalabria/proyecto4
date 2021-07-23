@@ -7,7 +7,6 @@ export default function ContextProvider({ children }) {
 	const [user, setUser] = useState({})
 	const [products, setProducts] = useState([])
 	const [currentPage, setCurrentPage] = useState(0)
-
 	const [currentFilter, setCurrentFilter] = useState()
 	return (
 		<Context.Provider
