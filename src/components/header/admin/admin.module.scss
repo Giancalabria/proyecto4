@@ -1,0 +1,21 @@
+@import '../../../utils/styles/flex';
+@import '../../../utils/styles/theme';
+
+
+.adminDiv {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    .adminFlex{
+        @include flex(column);
+
+        .enter {
+            background-color: lightblue;
+            margin: 5px;
+        }
+    }
+    
+}
+
+

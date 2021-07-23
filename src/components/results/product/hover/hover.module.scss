@@ -1,0 +1,57 @@
+@import '../../../../utils/styles/flex';
+@import '../../../../utils/styles/theme';
+
+.neededPoints{
+    background-color: #8080807c;
+    max-width: fit-content;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    align-items: center;
+    transform: translate(0%, 40%);
+    color: white;
+    margin-right: 10px;
+}
+.text{
+    padding-right: 5px;
+}
+
+.hoverProduct{
+    background-color: #3bcef6a1;
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 25px 6px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.hoverFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+}
+
+.priceContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price {
+    font-size: 30px;
+    padding-right: 5px;
+    color: white;
+}
+
+.button {
+    color: $color-grey-dark;
+}
