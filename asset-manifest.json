@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/proyecto4/static/css/main.281e3de7.chunk.css",
+    "main.js": "/proyecto4/static/js/main.94b6affd.chunk.js",
+    "main.js.map": "/proyecto4/static/js/main.94b6affd.chunk.js.map",
+    "runtime-main.js": "/proyecto4/static/js/runtime-main.9c7982b0.js",
+    "runtime-main.js.map": "/proyecto4/static/js/runtime-main.9c7982b0.js.map",
+    "static/js/2.d5cff19f.chunk.js": "/proyecto4/static/js/2.d5cff19f.chunk.js",
+    "static/js/2.d5cff19f.chunk.js.map": "/proyecto4/static/js/2.d5cff19f.chunk.js.map",
+    "index.html": "/proyecto4/index.html",
+    "static/css/main.281e3de7.chunk.css.map": "/proyecto4/static/css/main.281e3de7.chunk.css.map",
+    "static/js/2.d5cff19f.chunk.js.LICENSE.txt": "/proyecto4/static/js/2.d5cff19f.chunk.js.LICENSE.txt",
+    "static/media/aerolab-logo.0a8fb170.svg": "/proyecto4/static/media/aerolab-logo.0a8fb170.svg",
+    "static/media/buy-blue.c5c4f01c.svg": "/proyecto4/static/media/buy-blue.c5c4f01c.svg",
+    "static/media/buy-white.9b6e6567.svg": "/proyecto4/static/media/buy-white.9b6e6567.svg",
+    "static/media/coin.b8bc711d.svg": "/proyecto4/static/media/coin.b8bc711d.svg",
+    "static/media/happy.021689e4.svg": "/proyecto4/static/media/happy.021689e4.svg",
+    "static/media/header-x1.b6f067c6.png": "/proyecto4/static/media/header-x1.b6f067c6.png",
+    "static/media/header-x2.cc65119a.png": "/proyecto4/static/media/header-x2.cc65119a.png",
+    "static/media/sad-face.dae19aea.svg": "/proyecto4/static/media/sad-face.dae19aea.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c7982b0.js",
+    "static/js/2.d5cff19f.chunk.js",
+    "static/css/main.281e3de7.chunk.css",
+    "static/js/main.94b6affd.chunk.js"
+  ]
+}
