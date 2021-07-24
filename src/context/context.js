@@ -11,6 +11,7 @@ export default function ContextProvider({ children }) {
 	const [redeemedProduct, setRedeemedProduct] = useState(false)
 	const [isError, setIsError] = useState(false)
 	const [showRedeemMessage, setShowRedeemMessage] = useState(false)
+	const [showHistory, setShowHistory] = useState(false)
 	return (
 		<Context.Provider
 			value={{
@@ -28,6 +29,8 @@ export default function ContextProvider({ children }) {
 				setIsError,
 				showRedeemMessage,
 				setShowRedeemMessage,
+				showHistory,
+				setShowHistory,
 			}}
 		>
 			{children}

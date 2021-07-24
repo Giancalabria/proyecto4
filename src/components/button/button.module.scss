@@ -30,3 +30,16 @@
 .terciary:hover {
     background-color: #d9d9d9;
 }
+
+.close {
+    font-weight: 400;
+    border-radius: 100%;
+    width: 40px;
+    background-color: black;
+    color: white;
+}
+
+.close:hover{
+    background-color: #e2e1e1;
+    color: red;
+}

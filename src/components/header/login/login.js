@@ -21,7 +21,7 @@ export const Login = ({ setAdminMode, setLoginAdmin }) => {
 			<Button
 				content='X'
 				name='close'
-				variant='secondary'
+				variant='close'
 				className={styles.close}
 				onClick={() => setLoginAdmin(false)}
 			/>

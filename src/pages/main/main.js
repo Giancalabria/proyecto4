@@ -7,6 +7,7 @@ import { Results } from '../../components/results/results'
 import { useContext } from 'react'
 import { Context } from '../../context/context'
 import { RedeemMessage } from '../../components/redeemMessage/redeemMessage'
+import { History } from '../../components/history/history'
 
 export const Main = () => {
 	const {
@@ -17,6 +18,7 @@ export const Main = () => {
 		setProducts,
 		currentFilter,
 		showRedeemMessage,
+		showHistory,
 	} = useContext(Context)
 
 	const getNumberOfProducts = () => {
@@ -67,9 +69,12 @@ export const Main = () => {
 	return (
 		<main>
 			{showRedeemMessage ? <RedeemMessage /> : null}
+			{showHistory ? <History /> : null}
 			<Page
 				id='main'
-				className={styles.main}
+				className={`${styles.main} ${
+					showHistory ? styles.stopScrolling : null
+				}`}
 				background={currentPage === 0 ? background : background2}
 			>
 				<div className={styles.container}>
@@ -124,7 +129,6 @@ export const Main = () => {
 						) : null}
 					</div>
 				</div>
-
 				<Results />
 			</Page>
 		</main>

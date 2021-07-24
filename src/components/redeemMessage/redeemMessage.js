@@ -7,7 +7,6 @@ import { Context } from '../../context/context'
 export const RedeemMessage = () => {
 	const { setShowRedeemMessage, isError, setIsError } = useContext(Context)
 
-	console.log(isError)
 	return (
 		<div
 			className={`${styles.redeemMessage} `}

@@ -10,7 +10,7 @@ import { Login } from './login/login'
 import { Admin } from './admin/admin'
 import { Button } from '../button/button'
 export const Header = ({ background }) => {
-	const { user, setUser, redeemedProduct } = useContext(Context)
+	const { user, setUser, redeemedProduct, setShowHistory } = useContext(Context)
 	const [adminMode, setAdminMode] = useState(false)
 	const [points, setPoints] = useState()
 	const [loginAdmin, setLoginAdmin] = useState(false)
@@ -68,7 +68,7 @@ export const Header = ({ background }) => {
 					content='Redeem history'
 					variant='primary'
 					className={`${styles.button}`}
-					onClick={() => alert('Hola')}
+					onClick={() => setShowHistory(true) + setLoginAdmin(false)}
 				/>
 				<div className={styles.info}>
 					<p className={styles.user}>{user.name}</p>

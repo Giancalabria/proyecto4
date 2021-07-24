@@ -21,5 +21,5 @@ Button.propTypes = {
 	className: PropTypes.string,
 	content: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
-	variant: PropTypes.oneOf(['primary', 'secondary', 'terciary']),
+	variant: PropTypes.oneOf(['primary', 'secondary', 'terciary', 'close']),
 }

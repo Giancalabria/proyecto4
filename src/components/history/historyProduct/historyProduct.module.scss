@@ -1,0 +1,36 @@
+
+.history {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: white;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.photo {
+    width: 200px;
+    height: 150px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    color: #616161
+}
+
+.category {
+    color: #e2e2e2
+}
