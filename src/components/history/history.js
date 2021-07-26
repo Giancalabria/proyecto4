@@ -14,9 +14,11 @@ export const History = () => {
 	}, [user])
 
 	useEffect(() => {
+		const reverseHistoryData =
+			historyData !== undefined ? historyData.reverse() : null
 		const mapHistoryProducts = () => {
 			return historyData !== undefined ? (
-				historyData.map((object, index) => (
+				reverseHistoryData.map((object, index) => (
 					<HistoryProduct
 						key={index}
 						url={object.img.hdUrl}
@@ -32,6 +34,7 @@ export const History = () => {
 		}
 		setMappedHistoryProducts(mapHistoryProducts)
 	}, [historyData])
+
 	return (
 		<div
 			className={`${styles.container} `}
