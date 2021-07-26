@@ -29,7 +29,7 @@ export const RedeemMessage = () => {
 							: 'Something went wrong, please try again'}
 					</p>
 					<Button
-						content={!isError ? 'Accept' : 'Try again'}
+						content='Accept'
 						variant='terciary'
 						className={`${
 							!isError ? styles.successButton : styles.errorButton

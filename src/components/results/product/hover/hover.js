@@ -15,6 +15,10 @@ export const Hover = ({ price, coin, id }) => {
 				.then(() => setRedeemedProduct(false))
 				.then(() => setRedeemId(0))
 				.then(() => setShowRedeemMessage(true))
+		} else if (redeemId === id && user.points < price) {
+			setIsError(true)
+			setShowRedeemMessage(true)
+			setRedeemedProduct(false)
 		}
 	}, [redeemId])
 
@@ -29,7 +33,11 @@ export const Hover = ({ price, coin, id }) => {
 					content='Redeem now!'
 					variant='terciary'
 					className={`${styles.button} `}
-					onClick={() => setRedeemId(id) + setRedeemedProduct(true)}
+					onClick={() => {
+						setRedeemId(id)
+						user.points < price ? setIsError(true) : setIsError(false)
+						setRedeemedProduct(true)
+					}}
 				/>
 			</div>
 		</div>

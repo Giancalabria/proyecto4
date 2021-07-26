@@ -30,42 +30,19 @@ export const Main = () => {
 	}
 
 	const sortProductsBy = (array, sort, desc) => {
-		if (desc === true && sort === 'name') {
-			let newProducts = array.sort(function (a, b) {
-				if (a[sort].toUpperCase() < b[sort].toUpperCase()) {
-					return -1
-				} else if (a[sort] > b[sort]) {
-					return 1
-				} else {
-					return 0
-				}
-			})
-			setProducts(newProducts)
-		} else if (desc === false) {
-			let newProducts = array.sort(function (a, b) {
-				if (a[sort] > b[sort]) {
-					return -1
-				} else if (a[sort] < b[sort]) {
-					return 1
-				} else {
-					return 0
-				}
-			})
-			setProducts(newProducts)
-		} else if (desc === true && sort !== 'name') {
-			let newProducts = array.sort(function (a, b) {
-				if (a[sort] < b[sort]) {
-					return -1
-				} else if (a[sort] > b[sort]) {
-					return 1
-				} else {
-					return 0
-				}
-			})
-			setProducts(newProducts)
-		}
+		let newProducts = array.sort(function (a, b) {
+			let params = ''
+			sort === name ? (params = sort.toUpperCase()) : (params = sort)
+			if (a[params] < b[params]) {
+				return -1
+			} else if (a[params] > b[params]) {
+				return 1
+			} else {
+				return 0
+			}
+		})
+		desc ? setProducts(newProducts) : setProducts(newProducts.reverse())
 	}
-
 	return (
 		<main>
 			{showRedeemMessage ? <RedeemMessage /> : null}
