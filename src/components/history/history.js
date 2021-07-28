@@ -36,17 +36,16 @@ export const History = () => {
 	}, [historyData])
 
 	return (
-		<div
-			className={`${styles.container} `}
-			style={{ height: window.innerHeight, width: window.innerWidth }}
-		>
+		<div className={`${styles.container} `}>
 			<aside className={styles.aside}>
-				<Button
-					content='X'
-					variant='close'
-					className={styles.close}
-					onClick={() => setShowHistory(false)}
-				/>
+				<div className={styles.buttonWrapper}>
+					<Button
+						content='X'
+						variant='close'
+						className={styles.close}
+						onClick={() => setShowHistory(false)}
+					/>
+				</div>
 				<div className={styles.products}>{mappedHistoryProducts}</div>
 			</aside>
 		</div>

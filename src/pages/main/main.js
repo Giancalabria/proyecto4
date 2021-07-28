@@ -8,7 +8,7 @@ import { useContext } from 'react'
 import { Context } from '../../context/context'
 import { RedeemMessage } from '../../components/redeemMessage/redeemMessage'
 import { History } from '../../components/history/history'
-
+import sortProductsBy from '../../utils/functions/sortProductsBy'
 export const Main = () => {
 	const {
 		products,
@@ -29,20 +29,6 @@ export const Main = () => {
 		}
 	}
 
-	const sortProductsBy = (array, sort, desc) => {
-		let newProducts = array.sort(function (a, b) {
-			let params = ''
-			sort === name ? (params = sort.toUpperCase()) : (params = sort)
-			if (a[params] < b[params]) {
-				return -1
-			} else if (a[params] > b[params]) {
-				return 1
-			} else {
-				return 0
-			}
-		})
-		desc ? setProducts(newProducts) : setProducts(newProducts.reverse())
-	}
 	return (
 		<main>
 			{showRedeemMessage ? <RedeemMessage /> : null}
@@ -68,7 +54,8 @@ export const Main = () => {
 								currentFilter === 0 ? styles.active : styles.inactive
 							}`}
 							onClick={() =>
-								sortProductsBy(products, 'name', true) + setCurrentFilter(0)
+								setProducts(sortProductsBy(products, 'name', true)) +
+								setCurrentFilter(0)
 							}
 						/>
 						<Button
@@ -78,7 +65,8 @@ export const Main = () => {
 								currentFilter === 1 ? styles.active : styles.inactive
 							}`}
 							onClick={() =>
-								sortProductsBy(products, 'cost', true) + setCurrentFilter(1)
+								setProducts(sortProductsBy(products, 'cost', true)) +
+								setCurrentFilter(1)
 							}
 						/>
 						<Button
@@ -88,7 +76,8 @@ export const Main = () => {
 								currentFilter === 2 ? styles.active : styles.inactive
 							}`}
 							onClick={() =>
-								sortProductsBy(products, 'cost', false) + setCurrentFilter(2)
+								setProducts(sortProductsBy(products, 'cost', false)) +
+								setCurrentFilter(2)
 							}
 						/>
 					</div>
