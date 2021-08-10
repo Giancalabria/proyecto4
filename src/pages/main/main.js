@@ -30,7 +30,7 @@ export const Main = () => {
 	}
 
 	return (
-		<main>
+		<section>
 			{showRedeemMessage ? <RedeemMessage /> : null}
 			{showHistory ? <History /> : null}
 			<Page
@@ -97,6 +97,6 @@ export const Main = () => {
 				</div>
 				<Results />
 			</Page>
-		</main>
+		</section>
 	)
 }
